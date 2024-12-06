@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Run-Meter
+Type=Application
+Terminal=true
+Exec=/home/user/Desktop/run_meter.sh
+Icon=/usr/share/test.png
