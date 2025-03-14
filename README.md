@@ -6,6 +6,12 @@ This project simulates power meters communicating with a central node, sending e
 ## Installation
 Create a new python environment. Use `mkvirtualenv`, `venv`, etc.
 
+### Windows
+To install on Windows and run using the provided batch files, use venv instead.
+`python -m venv venv`
+`venv\Scripts\activate`
+`pip install -r requirements.txt`
+
 Activate the python environment. Install the prerequisite libraries by `pip install -r requirements.txt`
 
 Rename the `environment.env.sample` environment file to `environment.env`. You need the following environment variables:
