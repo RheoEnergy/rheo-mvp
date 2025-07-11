@@ -36,3 +36,90 @@ Alternatively it is also possible to run the application by copying or pulling t
 
 ## To do
 Simulate burning of tokens by prepaid meters as electricity flows through them.
+
+## # Rheo Smart Meter MVP
+
+This repository contains the early-stage MVP of Rheo’s smart meter integration system. It demonstrates how real-time energy data (kWh) collected from smart meters is transmitted via MQTT and tokenized into digital assets — forming the foundation of our energy-backed stablecoin (GET).
+
+---
+
+## 🔗 XRPL Integration (Planned)
+
+This MVP is off-chain, but designed for seamless XRPL integration. We plan to:
+
+- Use **Issued Currencies** to represent GET (Green Energy Token)
+- Leverage **XRPL Hooks** (once available) to automate token issuance based on real-time energy thresholds
+- Push validated tokenization events to the **XRPL Mainnet** via `xrpl-py`
+  
+---
+
+## 🔧 Libraries & Frameworks
+
+- **paho-mqtt** – For MQTT communication
+- **Python 3.9+** – Language base
+- **pytest** – Lightweight test framework (for token logic)
+- **(Planned)**: xrpl-py SDK for issuing and tracking GET tokens on XRPL
+  
+## 📈 System Design Diagram
+
+**Narrative**:  
+1. A simulated smart meter pushes verfied energy usage & issuance (kWh) to the MQTT broker.  
+2. The MQTT client receives data and logs it.  
+3. A converter processes kWh into token units (e.g., 1 kWh = 1 GET).  
+4. Tokens are recorded and (in production) will trigger on-chain issuance via XRPL.
+          +----------------------+
+          |   Energy Producers   |
+          |  (Smart Meters, IoT) |
+          +----------+-----------+
+                     |
+          Real-time kWh data via MQTT
+                     |
+          +----------v-----------+
+          |   Rheo Data Engine   |  <-- Data validation, token conversion (kWh → GET)
+          +----------+-----------+
+                     |
+          Token issuance & settlement triggers
+                     |
+       +-------------v--------------+
+       |      XRPL Mainnet          |  <-- Issued Currencies (GET stablecoin), Settlement, Hooks
+       +-------------+--------------+
+                     |
+          +----------v-----------+
+          |   XRPL EVM Sidechain |  <-- Smart contracts, staking, governance, liquidity pools
+          +----------+-----------+
+                     |
+          +----------v-----------+
+          |    Institutional     |
+          |     Investors &      |
+          |     Marketplaces     |
+          +---------------------+
+
+Optional integrations (dashed lines):
+          +-----------------+
+          |Other Blockchains| <-- Cross-chain bridges, interoperability (future)
+          +-----------------+
+          +-----------------+
+         |RTGS/OTC/CEX & DeFi| <-- Liquidity, compliance, market access
+          +-----------------+
+
+## 🚧 Status & Roadmap
+
+✅ Basic MQTT-to-kWh logic  
+✅ Token unit mapping  
+🔜 XRPL token issuance via `xrpl-py`  
+🔜 Smart contract logic via XRPL Hooks  
+🔜 Energy partner pilot integration  
+
+---
+
+## 🧠 About Rheo
+
+Rheo is building the first institutional-grade, blockchain-based investment platform backed by real-world sustainable infrastructure. This MVP is part of our energy tokenisation pipeline, designed for future deployment on the XRPL.
+
+---
+
+## 🚧 Status & Roadmap
+
+✅ Basic MQTT-to-kWh logic  
+✅ Token unit mapping  
+🔜 XRPL token issuance via `xrpl-py`  
