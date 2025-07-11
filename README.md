@@ -67,8 +67,7 @@ This MVP is off-chain, but designed for seamless XRPL integration. We plan to:
 2. The MQTT client receives data and logs it.  
 3. A converter processes kWh into token units (e.g., 1 kWh = 1 GET).  
 4. Tokens are recorded and (in production) will trigger on-chain issuance via XRPL.
-<img width="982" height="828" alt="image" src="https://github.com/user-attachments/assets/fd0cae9b-a8f7-4942-8bf1-cd61430c4718" />
-
+<img width="940" height="794" alt="image" src="https://github.com/user-attachments/assets/4ca8a943-1576-475e-990b-fc4b29b93571" />
 
 ## 🚧 Status & Roadmap
 
