@@ -67,40 +67,8 @@ This MVP is off-chain, but designed for seamless XRPL integration. We plan to:
 2. The MQTT client receives data and logs it.  
 3. A converter processes kWh into token units (e.g., 1 kWh = 1 GET).  
 4. Tokens are recorded and (in production) will trigger on-chain issuance via XRPL.
-          +----------------------+
-          |   Energy Producers   |
-          |  (Smart Meters, IoT) |
-          +----------+-----------+
-                     |
-          Real-time kWh data via MQTT
-                     |
-          +----------v-----------+
-          |   Rheo Data Engine   |  <-- Data validation, token conversion (kWh → GET)
-          +----------+-----------+
-                     |
-          Token issuance & settlement triggers
-                     |
-       +-------------v--------------+
-       |      XRPL Mainnet          |  <-- Issued Currencies (GET stablecoin), Settlement, Hooks
-       +-------------+--------------+
-                     |
-          +----------v-----------+
-          |   XRPL EVM Sidechain |  <-- Smart contracts, staking, governance, liquidity pools
-          +----------+-----------+
-                     |
-          +----------v-----------+
-          |    Institutional     |
-          |     Investors &      |
-          |     Marketplaces     |
-          +---------------------+
+<img width="982" height="828" alt="image" src="https://github.com/user-attachments/assets/fd0cae9b-a8f7-4942-8bf1-cd61430c4718" />
 
-Optional integrations (dashed lines):
-          +-----------------+
-          |Other Blockchains| <-- Cross-chain bridges, interoperability (future)
-          +-----------------+
-          +-----------------+
-         |RTGS/OTC/CEX & DeFi| <-- Liquidity, compliance, market access
-          +-----------------+
 
 ## 🚧 Status & Roadmap
 
